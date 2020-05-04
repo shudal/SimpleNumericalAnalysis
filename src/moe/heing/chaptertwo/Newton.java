@@ -4,6 +4,14 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+可通过debug查看差商表
+代码中的差商表数组说明：n个点
+0-> f(xi),长度为n
+1-> 一阶差商们，长度为n，但下标0为null
+2-> 二阶差商们，长度为n，但下标[0,1]为null
+3-> 三阶差商们，长度为n，但下标[0,2]为null
+ */
 // 牛顿插值
 public class Newton {
     public boolean success = true;
@@ -87,15 +95,18 @@ public class Newton {
         list.add(new BigDecimal[]{x0, y0});
         */
 
-        BigDecimal x0 = new BigDecimal("100"), y0 = new BigDecimal("10");
+        BigDecimal x0, y0;
+        x0 = new BigDecimal("1"); y0 = new BigDecimal("2");
         list.add(new BigDecimal[]{x0, y0});
-        x0 = new BigDecimal("121"); y0 = new BigDecimal("11");
+        x0 = new BigDecimal("3"); y0 = new BigDecimal("6");
         list.add(new BigDecimal[]{x0, y0});
-        x0 = new BigDecimal("144"); y0 = new BigDecimal("12");
+        x0 = new BigDecimal("4"); y0 = new BigDecimal("5");
+        list.add(new BigDecimal[]{x0, y0});
+        x0 = new BigDecimal("5"); y0 = new BigDecimal("4");
         list.add(new BigDecimal[]{x0, y0});
 
         Newton n = new Newton();
-        BigDecimal ans = n.cal(new BigDecimal("115"), list);
+        BigDecimal ans = n.cal(new BigDecimal("2"), list);
 
         System.out.println("ans=" + ans);
 

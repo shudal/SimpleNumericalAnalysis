@@ -10,12 +10,7 @@ public class MyFunctionOne implements MyFunction{
 
     @Override
     public BigDecimal get(BigDecimal x, BigDecimal y) {
-        BigDecimal ans = BigDecimal.ZERO;
-
-
-        BigDecimal b1 = x.multiply(new BigDecimal("2"));
-        b1 = b1.divide(y, scale, roundingMode);
-        ans = y.subtract(b1);
+        BigDecimal ans = x.multiply(y);
 
         return ans;
     }

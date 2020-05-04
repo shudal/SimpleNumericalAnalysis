@@ -42,7 +42,7 @@ public class RungeKuttaFourth {
     public static void main(String[] args) {
         MyFunctionOne myFunctionOne = new MyFunctionOne();
         RungeKuttaFourth rungeKuttaFourth = new RungeKuttaFourth();
-        BigDecimal h = new BigDecimal("0.2");
+        BigDecimal h = new BigDecimal("0.1");
         int N = 5;
         BigDecimal[] bs = new BigDecimal[]{BigDecimal.ZERO, BigDecimal.ONE};
         List<BigDecimal[]> ans = rungeKuttaFourth.cal(bs, h, N, myFunctionOne);
